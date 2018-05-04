@@ -7,7 +7,7 @@ const rentals = require('./routes/rentals');
 const express = require('express');
 const app = express();
 
-mongoose.connect('mongodb://AleksBartov:Merahba2018@ds247439.mlab.com:47439/aleksbartovworks')
+mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds247439.mlab.com:47439/aleksbartovworks`)
   .then(() => console.log('Connected to MongoDB...'))
   .catch(err => console.error('Could not connect to MongoDB...'));
 
